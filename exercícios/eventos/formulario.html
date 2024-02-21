@@ -1,0 +1,22 @@
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Document</title>
+
+</head>
+<body>
+   <input onfocus="console.log('focou no input')" onblur="desfocou()" type="text">
+   <select onchange="console.log('Estado foi modificado')" name="" id="">
+      <option value="">Selecione uma opção</option>
+      <option value="1">Primeira opção</option>
+      <option value="2">Segunda opção</option>
+   </select>
+
+   <script>
+    function desfocou(){
+      console.log('retirou o foco')
+    }
+  </script>
+</body>
+</html>

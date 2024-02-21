@@ -1,0 +1,33 @@
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Document</title>
+    <script>
+      function mouseClick(){
+        alert('evento')
+      }
+    </script>
+</head>
+<body>
+    <div onclick="mouseClick()" style="width: 150px; height: 150px; background-color: antiquewhite; margin: 5px;">
+      <span>um clique</span>
+    </div>
+    
+    <div ondblclick="mouseClick()" style="width: 150px; height: 150px; background-color: rgb(119, 120, 177); margin: 5px;">
+      <span>dois clique</span>
+    </div>
+
+    <div onmouseup="mouseClick()" style="width: 150px; height: 150px; background-color: rgb(4, 155, 54); margin: 5px;">
+      <span>clique liberado</span>
+    </div>
+    
+    <div onmouseover="mouseClick()" style="width: 150px; height: 150px; background-color: rgb(122, 68, 90); margin: 5px;">
+      <span>passar o mouse por cima</span>
+    </div>
+
+    <div onmouseout ="mouseClick()" style="width: 150px; height: 150px; background-color: rgb(152, 199, 42); margin: 5px;">
+      <span>passar o mouse e sai</span>
+    </div>
+</body>
+</html>

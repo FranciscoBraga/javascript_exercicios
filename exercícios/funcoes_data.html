@@ -1,0 +1,26 @@
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Document</title>
+    <script>
+      
+      var dataNascimento = new Date()
+      dataNascimento.setFullYear(1982,4,3)
+
+      document.write(dataNascimento.getFullYear())
+      var data = new Date()
+
+      document.write(data.getHours()+ ':' +data.getMinutes()+ ':'+data.getSeconds()+':'+ data.getMilliseconds()+'<br>' )
+      document.write(data.getDate()+'/'+(data.getMonth()+1) +'/'+data.getFullYear())
+
+      document.write(data.getFullYear() - dataNascimento.getFullYear())
+
+      
+   
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
