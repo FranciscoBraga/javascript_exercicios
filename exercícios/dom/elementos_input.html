@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function distribuiCaracter(){
+          var caracter =  document.getElementById("entrada").value
+
+          if(!isNaN(caracter)){
+                document.getElementById("numeros").value += caracter 
+          }else{
+            document.getElementById("letras").value +=caracter 
+          }
+          document.getElementById("entrada").value = ''
+         
+
+        }
+    </script>
+</head>
+<body>
+    <input onkeyup="distribuiCaracter()" type="text" id="entrada">
+    <br>
+    <br>
+    <label for="letras">letras</label>
+    <input type="text" disabled="disabled" id="letras">
+    <br>
+    <br>
+    <label for="letras">Números</label>
+    <input type="text" disabled="disabled" id="numeros">
+</body>
+</html>

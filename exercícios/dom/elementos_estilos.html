@@ -1,0 +1,21 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script> 
+      function modificaEstilo(corDeFundo){
+       document.getElementById('elemento').style.background = corDeFundo
+      }
+    </script>
+</head>
+<body>
+    
+    <input type="button" value="vermelho" onclick="modificaEstilo('red')" >
+    <input type="button" value="azul" onclick="modificaEstilo('blue')" >
+    <input type="button" value="verde" onclick="modificaEstilo('green')" >
+    <hr>
+    <div id="elemento" style="height: 150px;width: 150px; background-color: brown;"></div>
+
+</body>
+</html>
