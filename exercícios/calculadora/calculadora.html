@@ -1,0 +1,62 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora JavaScript8</title>
+</head>
+<style>
+  #conteiner{
+    margin: auto;
+    width: 40%;
+    background-color: #2F2E30;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  #resultado{
+    margin: 5%;
+    padding:10px;
+    border:1px solid black;
+  }
+ input[type="button"]{
+    background-color: #363943;
+    border-radius: 5px;
+ }
+</style>
+<body>
+    <div id="conteiner">
+            <input type="text" name="resultado" id="resultado">
+        <div>
+            <input onclick="calcular('acao','C')" type="button" value="C">
+            <input onclick="calcular('acao','/')" type="button" value="/"> 
+            <input onclick="calcular('acao','*')" type="button" value="X">   
+        </div>
+        <div>
+            <input onclick="calcular('valor','7')" type="button" value="7">
+            <input onclick="calcular('valor','8')" type="button" value="8"> 
+            <input onclick="calcular('valor','9')" type="button" value="9"> 
+            <input onclick="calcular('acao','-')" type="button" value="-">   
+        </div>
+        <div>
+            <input onclick="calcular('valor','4')" type="button" value="4">
+            <input onclick="calcular('valor','5')" type="button" value="5"> 
+            <input onclick="calcular('valor','6')" type="button" value="6"> 
+            <input onclick="calcular('acao','+')" type="button" value="+">  
+        </div>
+        <div>
+            <input onclick="calcular('valor','1')" type="button" value="1">
+            <input onclick="calcular('valor','2')" type="button" value="2"> 
+            <input onclick="calcular('valor','3')" type="button" value="3">   
+        </div>
+        <div>
+            <input onclick="calcular('valor','C')" type="button" value="0">
+            <input onclick="calcular('acao','.')" type="button" value="."> 
+            <input onclick="calcular('acao','=')" type="button" value="=">   
+        </div>
+    </div>
+    <script>
+        function calcular(tipo, valor){
+           console.log(tipo, valor)
+        }
+    </script>
+</body>
+</html>
