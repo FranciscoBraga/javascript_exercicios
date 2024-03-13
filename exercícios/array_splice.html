@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    //array unidimensional 
+    var lista_frutas = Array('Banana','Jussara','Marmelo','Goiaba')
+    
+    console.log(lista_frutas)
+
+    //Este método altera um array, adicionando, removendo e inserindo elementos.
+    //retirando a fruta Marmelo
+    lista_frutas.splice(2,1)
+
+    console.log(lista_frutas)
+
+
+    //incluindo a fruta
+    lista_frutas.splice(2,2,'Marmelo')
+
+    /*como funciona o splice
+    indice -  índice o qual inicia alteração do array
+    deleteCount - valor que indica a quantidade que deve ser removida do array
+    elemento1, ..., elementoN - quantos elementos deve ser incluidos
+     */ 
+  
+
+    console.log(lista_frutas)
+</script>
+
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisando no Array</title>
+    <script>
+
+        var lista_frutas = Array('Banana','Jussara','Marmelo','Goiaba')
+
+        console.log(lista_frutas.sort())
+ 
+        var numeros = Array()
+        numeros[0] = 40
+        numeros[1] = 19
+        numeros[2] = 17
+        numeros[3] = 38
+        numeros[4] = 42
+        numeros[5] = 1
+        numeros[6] = 22
+        numeros[7] = 21
+        numeros[8] = 10
+        numeros[9] = 20
+        numeros[10] = 18
+
+        console.log(numeros.sort())
+
+       /*  A função de comparação personalizada precisa retornar um valor negativo se 
+       o primeiro elemento for menor que o segundo, um valor positivo se o primeiro 
+       elemento   for maior que o segundo e zero se os elementos forem iguais. */
+  
+       //callback
+       console.log(numeros.sort(decrescente))
+
+       function decrescente(a,b){
+        return b-a
+       }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

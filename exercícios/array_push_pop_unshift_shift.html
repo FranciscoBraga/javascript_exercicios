@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inclusão e exclusão de elementos JavaScript</title>
+<script>
+    //array unidimensional
+    var lista_frutas = Array()
+    
+    lista_frutas[0] = 'Banana'
+    lista_frutas[1] = 'Jussara'
+
+    //inclui um valor no início do array
+    lista_frutas.unshift('Marmelo')
+    lista_frutas.unshift('Goiaba')
+    lista_frutas.unshift('Figo','Pêra')
+    //inclui um valor no final do array
+    lista_frutas.push('Genipapo')
+    lista_frutas.push('Mamão')
+    lista_frutas.push('Tomate','Caqui')
+
+    console.log(lista_frutas)
+
+
+     //retirar um valor no início do array
+    lista_frutas.shift()
+
+    //retirar um valor no final do array
+    lista_frutas.pop()
+
+    console.log(lista_frutas)
+ 
+</script>
+
+</head>
+<body>
+    
+</body>
+</html>
