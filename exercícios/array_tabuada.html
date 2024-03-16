@@ -5,10 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>tabuada JavaScript</title>
     <script>
-           var mutiplicador = prompt("Digite o número multiplicador")
+           var multiplicador = prompt("Digite o número multiplicador")
            var multiplicando = prompt("Digete o número multiplicando")
 
-           
+           multiplicador = parseInt(multiplicador)
+           multiplicando = parseInt(multiplicando)
+
+           for(var x = 0; x <= multiplicando;x++){
+             document.write(x+' X '+ multiplicador+' = '+(multiplicador*x)+'<br>')
+
+
+           }
 
 
     </script>
@@ -16,9 +23,7 @@
 </head>
 <body>
 
-    <p>mutiplicador : é numero que vai realizar a multiplicação</p>
-    <br>
-    <p>multiplicando: é o número que vai ser multiplicado</p>
+
     
 </body>
 </html>
