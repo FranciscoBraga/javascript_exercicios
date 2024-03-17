@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada com 2 for's</title>
+    <style>
+        .tabuada{
+            margin: 10px;
+            display: flex;
+        }
+    </style>
+    <script>
+        function tabuada(){
+            var tabuada =  document.getElementById('numero').value
+            for( var m = 1 ;  m <= tabuada; m++ ){
+                for(var u = 0; u <=10;u++){
+                   //  document.write(+u +' X '+ m +' = '+ (u*m))
+                 var calculo =    document.querySelector('.calculo')
+                 calculo.textContent = u +' X '+ m +' = '+ (u*m)
+                }
+                
+            }
+        }
+    </script>
+</head>
+<body >
+    <h1>Tabela de tabuada</h1>
+    <p>produz tabuadas de 1  a número</p>
+    <input type="text" placeholder="Digite um numero" id="numero">
+    <button onclick="tabuada()">Tabuada</button>
+    <div class="tabuada">
+        <span class="calculo"></span>
+
+    </div>
+
+</body>
+</html>

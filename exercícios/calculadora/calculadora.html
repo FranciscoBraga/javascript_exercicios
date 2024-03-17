@@ -7,55 +7,153 @@
 <style>
   #conteiner{
     margin: auto;
-    width: 40%;
+    width: 30%;
     background-color: #2F2E30;
     padding: 5px;
     border-radius: 5px;
   }
   #resultado{
     margin: 5%;
-    padding:10px;
+    padding:10px 25px;
+    display: block;
     border:1px solid black;
+    width: 90%;
+    border-radius: 5px;
   }
  input[type="button"]{
     background-color: #363943;
     border-radius: 5px;
+    padding: 5px;
+    margin: 5px 3px;
+    width: 50px;
+    color: aliceblue;
+    font-size: 32px;
+    
+ }
+ #botao{
+    margin: 10px 10px 10px 35px;
+    width: 90%;
+    
+ }
+ #botao_separado{
+    display: blockS;
+ }
+ #botao_separado #limpar{
+    background-color: red;
+    border-radius: 25px;
+ }
+ #botao_esquerda{
+    float: right;
+    width: 66%;
+ }
+ #botao_esquerda{
+    float: left;
+ }
+ #botao #soma{
+    height: 110px;
+    background-color: red;
  }
 </style>
 <body>
     <div id="conteiner">
             <input type="text" name="resultado" id="resultado">
-        <div>
-            <input onclick="calcular('acao','C')" type="button" value="C">
-            <input onclick="calcular('acao','/')" type="button" value="/"> 
-            <input onclick="calcular('acao','*')" type="button" value="X">   
-        </div>
-        <div>
+     
+        <div id="botao">
+            <div id="botao_separado">
+                <input onclick="calcular('acao','C')" type="button" value="C" id="limpar">
+            </div>
+            <input onclick="calcular('acao','D')" type="button" value="off">
+            <input onclick="calcular('valor','R')" type="button" value="&#8730"> 
+            <input onclick="calcular('valor','%')" type="button" value="%"> 
+            <input onclick="calcular('acao','/')" type="button" value="&divide;"> 
+            
             <input onclick="calcular('valor','7')" type="button" value="7">
             <input onclick="calcular('valor','8')" type="button" value="8"> 
             <input onclick="calcular('valor','9')" type="button" value="9"> 
             <input onclick="calcular('acao','-')" type="button" value="-">   
-        </div>
-        <div>
+
             <input onclick="calcular('valor','4')" type="button" value="4">
             <input onclick="calcular('valor','5')" type="button" value="5"> 
             <input onclick="calcular('valor','6')" type="button" value="6"> 
-            <input onclick="calcular('acao','+')" type="button" value="+">  
+            <input onclick="calcular('acao','*')" type="button" value="X">  
+            <div id="botao_esquerda">
+                <input onclick="calcular('valor','1')" type="button" value="1">
+                <input onclick="calcular('valor','2')" type="button" value="2"> 
+                <input onclick="calcular('valor','3')" type="button" value="3"> 
+    
+                <input onclick="calcular('valor','C')" type="button" value="0">
+                <input onclick="calcular('acao','.')" type="button" value="."> 
+                <input onclick="calcular('acao','=')" type="button" value="=">
+            </div>
+           <div id="botao_direita">
+            <input onclick="calcular('acao','+')" type="button" value="+" id="soma"> 
+           </div>
+           
+       
         </div>
-        <div>
-            <input onclick="calcular('valor','1')" type="button" value="1">
-            <input onclick="calcular('valor','2')" type="button" value="2"> 
-            <input onclick="calcular('valor','3')" type="button" value="3">   
-        </div>
-        <div>
-            <input onclick="calcular('valor','C')" type="button" value="0">
-            <input onclick="calcular('acao','.')" type="button" value="."> 
-            <input onclick="calcular('acao','=')" type="button" value="=">   
-        </div>
-    </div>
     <script>
         function calcular(tipo, valor){
-           console.log(tipo, valor)
+
+            document.getElementById('resultado').value += valor
+         
+           if(isNaN(valor)){
+            var numero = document.getElementById('resultado').value
+            console.log(numero)
+           }
+         
+         
+      
+
+           var resultado = document.getElementById('resultado')
+           switch(valor){
+            case 'C':
+                document.getElementById('resultado').value = ''
+            break;
+            case 'D':
+                document.getElementById('resultado').value = ''
+            break;
+            case 'R':
+                document.getElementById('resultado').value = ''
+            break;
+            case 'C':
+                document.getElementById('resultado').value = ''
+            break;
+            case 'C':
+                document.getElementById('resultado').value = ''
+            break;
+            case 'C':
+                document.getElementById('resultado').value = ''
+            break;
+            case 'C':
+                document.getElementById('resultado').value = ''
+            break;
+            case 'C':
+                document.getElementById('resultado').value = ''
+            break;
+            case 'C':
+                document.getElementById('resultado').value = ''
+            break;
+            case 'C':
+                document.getElementById('resultado').value = ''
+            break;
+            case 'C':
+                document.getElementById('resultado').value = ''
+            break;
+            case 'C':
+                document.getElementById('resultado').value = ''
+            break;case 'C':
+                document.getElementById('resultado').value = ''
+            break;
+            case 'C':
+                document.getElementById('resultado').value = ''
+            break;
+            case 'C':
+                document.getElementById('resultado').value = ''
+            break;
+            case 'C':
+                document.getElementById('resultado').value = ''
+     
+           }
         }
     </script>
 </body>
