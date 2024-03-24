@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foreach</title>
+    <script>
+        var listaAnimais = ['Tatu','Capivara','Rato','Sapo','Cavalo']
+
+        listaAnimais.forEach(function(valor,indice,array){
+            console.log('indice: '+ indice +'| valor : '+ valor)
+
+            if(valor == 'Sapo'){
+               array[indice] = 'Calango'
+               console.log(array)
+            }
+        })
+
+        console.log(listaAnimais)
+        console.log(listaAnimais[3])
+
+        var animais = function(valor,indice,array){
+            console.log('indice: '+ indice +'| valor : '+ valor)
+        }
+        listaAnimais.forEach(animais)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
