@@ -7,7 +7,7 @@
    
     <script>
         var playlist = Array()
-        var valor = 0
+        var valor = 1
         playlist['musica' ]=[]
         playlist['musica'][1] = 'Ouro de Tolo'
         playlist['musica'][2] = 'Trem das Onze'
@@ -20,11 +20,23 @@
         playlist['interprete'][3] ='Cartola'
         playlist['interprete'][4] ='Francisco Alves'
 
-      console.log(playlist['musica'],playlist['interprete'])
 
-     
       
+    try{
+       while(valor <= 5){
+        console.log(playlist['musica'][valor][1],'-',playlist['interprete'][valor][1])
+        valor++
+       }
+    }
+    catch(error){
+        //console.log(error)
+        console.log("Vamos tratar esse error")
+        throw  new Error("Houve uma erro estamos trabalhando para concerta-lo")
 
+    }  
+    finally{
+        console.log("aqui é final da aplicação")
+    }    
 
     </script>
       
