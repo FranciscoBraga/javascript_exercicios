@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //função anônima
+        let multiplicaComAnonima = function(x,y){
+            return x * y
+        }
+
+        document.write(multiplicaComAnonima(10,10)+'<br>')
+
+        //função arrow
+        
+        let multiplicaComArrow = (x,y) => x*y //retorno implícito
+        document.write(multiplicaComArrow(10,10)+'<br>')
+
+        let parImparComAnonima = function(numero){
+            if(numero %2 ===0){
+                document.write('Esse número é par<br>')
+            }else{
+                document.write('Esse número é ímpar<br>') 
+            }
+        }
+        parImparComAnonima(2)
+
+        let parImparComArrow = numero => numero % 2 ===0 ? 'par' : 'impar'
+        document.write(`Esse número é ${parImparComArrow(10)}`)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
