@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pliar Abstração </title>
+</head>
+   <script>
+  /*   //desenvolva uma sistema para construção de casa
+   
+    let quantosComodos = 4;
+    let temPiscina = true;
+    let cor = 'azul'
+
+    function verificarPiscina(){
+        if(temPiscina === true){
+            console.log('A casa tem piscina')
+        }else{   
+            console.log('A casa não tem piscina') 
+      }
+    }
+
+    verificarPiscina()
+
+//agora precisamos criar várias casas 
+
+   let casas =  Array()
+
+   casas[0] =Array()
+   casas[0]['quantosComodos'] = 5
+   casas[0]['temPiscina'] = false
+   casas[0]['cor'] = 'branca'
+
+   casas[1] =Array()
+   casas[1]['quantosComodos'] = 6
+   casas[1]['temPiscina'] = true
+   casas[1]['cor'] = 'amarela e verde'
+
+   console.log(casas)
+
+   function verificarPiscinaIndice(indice){
+        if(casas[indice]['temPiscina'] === true){
+            console.log('A casa tem piscina')
+        }else{   
+            console.log('A casa não tem piscina') 
+      }
+    }
+    verificarPiscinaIndice(1)
+
+    //precisa criar mas casas mais rápido
+
+    function construirCasas(cor,quantosComodos,temPiscina){
+        let casa = Array()
+
+        casa['quantosComodos'] = quantosComodos
+        casa['temPiscina'] = temPiscina
+        casa['cor'] = cor
+
+        casas.push(casa)
+    }
+
+     construirCasas('vermelha',6,false)
+     construirCasas('azul marinho',5,true)
+     construirCasas('azul bebe',7,true)
+
+     console.log(casas)
+     let c6 = casas[4]
+
+     console.log(c6) */
+
+ //paradigma OO
+   class Casa{
+        constructor(quantosComodos,temPiscina,cor){
+            this.quantosComodos = quantosComodos
+            this.temPiscina = temPiscina
+            this.cor = cor
+            
+        }
+
+        verificarCasaPiscina(){
+            if(this.temPiscina === true){
+                console.log('A casa tem piscina')
+            }else{   
+                console.log('A casa não tem piscina') 
+        }
+      }
+
+  } 
+
+   let c1 = new Casa(5,true,'azul')
+   let c2 = new Casa(7,false,'vermelha')
+   console.log(c1)
+   console.log(c1.quantosComodos,c1.cor)
+   c1.verificarCasaPiscina()
+   
+   let casas = Array()
+
+   casas.push(new Casa(5,true,'azul'))
+   casas.push(new Casa(7,false,'vermelho'))
+   casas.push(new Casa(8,true,'verde'))
+
+   console.log(casas)
+
+
+
+
+
+   </script>
+
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operador Super</title>
+        <script>
+        class Animal{
+            constructor(cor,altura,caracteristica,peso){
+                this.cor = cor
+                this.altura = altura
+                this.caracteristica = caracteristica
+                this.peso = peso
+            }
+
+            comer(){
+                console.log("Comendo")
+            }
+
+            dormir(){
+                console.log("Dormindo")
+            }
+
+         }
+
+
+        class Ave extends Animal{
+            constructor(bico,cor,altura,caracteristica,peso){
+                super(cor,altura,caracteristica,peso)
+                this.bico = bico
+            }
+            voar(){
+                console.log("voando")
+            }
+
+
+        }
+
+        class Coruja extends Ave{
+            constructor(periodo,bico,cor,altura,caracteristica,peso){
+                super(bico,cor,altura,caracteristica,peso)
+                this.periodo = periodo
+                
+            }
+
+            
+        }
+
+        class Papagaio extends Ave{
+            constructor(sabeFalar,bico,cor,altura,caracteristica,peso){
+               super(bico,cor,altura,caracteristica,peso)
+               this.sabeFalar =  sabeFalar
+            }
+
+           
+
+
+        }
+
+       
+    
+
+    let dudu = new Coruja('vespertino','médio','Branco e cinza',15,'agressiva',100)
+    let talarico = new Papagaio(true,'grande','Verde e Amarelo',70,'brincalhão',500)
+
+    console.log(dudu)
+    console.log(talarico)
+
+
+        </script>
+
+</head>
+<body>
+    
+</body>
+</html>

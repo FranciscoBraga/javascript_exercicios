@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Tv{
+            constructor(){
+                this._canais = Array(2,4,5,8,10)
+                this._canalAtivo = 5
+                this._volume =10
+            }
+
+            get canalAtivo(){
+                return this._canalAtivo
+            }
+
+            set canalAtivo(canal){
+                if(this._canais.indexOf(canal)!== -1){
+                this._canalAtivo = canal
+                }
+            }
+          
+        }
+
+        let philips = new Tv()
+         console.log(philips.canalAtivo)
+         philips.canalAtivo = 10
+         console.log(philips.canalAtivo)
+
+
+
+    </script>
+
+</body>
+<h1>Encapsulamento</h1>
+<p>
+    No paradigma da Orientação a Objetos (POO), o encapsulamento é um pilar fundamental que reúne dados (atributos) e
+    comportamentos (métodos) relacionados a uma entidade do mundo real, formando um objeto coeso. Essa prática oferece
+    diversos benefícios para o desenvolvimento de software, como
+</p>
+
+
+<ul>
+    <li>Seguro</li>
+    <li>reutilizavel</li>
+</ul>
+
+
+<h2>1. Modularidade e Coesão:</h2>
+
+O encapsulamento promove a modularidade ao agrupar dados e comportamentos em unidades autônomas, facilitando a
+organização e o entendimento do código.
+Cada objeto encapsula um conjunto específico de funcionalidades, tornando o código mais coeso e menos propenso a erros.
+
+<h2>2. Abstração e Escondimento de Implementação:</h2>
+
+O encapsulamento permite ocultar os detalhes internos de um objeto, expondo apenas a interface necessária para interação
+com ele através de métodos públicos.
+Isso promove abstração, permitindo que os programadores utilizem objetos sem se preocupar com sua implementação interna,
+simplificando o desenvolvimento e a manutenção do código.
+
+<h2>3. Proteção de Dados e Controle de Acesso:</h2>
+
+O encapsulamento possibilita restringir o acesso a dados e métodos internos de um objeto, definindo modificadores de
+acesso como public, private e protected.
+Isso protege os dados contra modificações indevidas e garante que apenas os métodos adequados possam acessá-los,
+promovendo segurança e confiabilidade no código.
+
+<h2>4. Reutilização e Flexibilidade:</h2>
+
+Objetos encapsulados podem ser facilmente reutilizados em diferentes partes do sistema, pois encapsulam tudo que é
+necessário para funcionar de forma independente.
+Essa reutilização promove modularidade e facilita a criação de componentes de software flexíveis e adaptáveis a
+diferentes necessidades.
+
+<h2>5. Manutenabilidade e Evolutividade:</h2>
+
+O encapsulamento facilita a manutenção do código, pois as alterações em um objeto geralmente não afetam outros objetos.
+Isso torna o código mais modular e menos propenso a efeitos colaterais indesejados, simplificando a depuração e a
+evolução do software.
+
+</html>

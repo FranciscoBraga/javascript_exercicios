@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polimorfismo</title>
+</head>
+<script>
+     class Animal{
+            constructor(cor,altura,caracteristica,peso){
+                this.cor = cor
+                this.altura = altura
+                this.caracteristica = caracteristica
+                this.peso = peso
+            }
+
+            comer(){
+                console.log("Comendo")
+            }
+
+            dormir(){
+                console.log("Dormindo")
+            }
+
+         }
+
+
+        class Ave extends Animal{
+            constructor(bico,cor,altura,caracteristica,peso){
+                super(cor,altura,caracteristica,peso)
+                this.bico = bico
+            }
+            voar(){
+                console.log("voando")
+            }
+        }
+
+        class Coruja extends Ave{
+            constructor(periodo,bico,cor,altura,caracteristica,peso){
+                super(bico,cor,altura,caracteristica,peso)
+                this.periodo = periodo
+                
+            }
+
+            cavar(){
+                console.log("cavando")
+            }   
+        }
+
+        class Papagaio extends Ave{
+            constructor(sabeFalar,bico,cor,altura,caracteristica,peso){
+               super(bico,cor,altura,caracteristica,peso)
+               this.sabeFalar =  sabeFalar
+            }
+
+            fala(){
+                console.log("Falando")
+            }
+
+        }
+
+        class Avestruz extends Ave{
+            constructor(bico,cor,altura,caracteristica,peso){
+               super(bico,cor,altura,caracteristica,peso)
+            }
+
+            enterrarCabeca(){
+                console.log("enterrando")
+            }
+            //polimorfismo
+            voar(){
+                console.log("Não voa")
+            }
+
+        }
+
+
+    let dudu = new Coruja('vespertino','médio','Branco e cinza',15,'agressiva',100)
+    let talarico = new Papagaio(true,'grande','Verde e Amarelo',70,'brincalhão',500)
+    let drum = new Avestruz('grande','Branco e Preto',250,'calmo',15000)
+
+    console.log(dudu)
+    dudu.cavar()
+    console.log(talarico)
+    talarico.fala()
+    console.log(drum)
+    drum.enterrarCabeca()
+    drum.voar()
+</script>
+<body>
+    
+</body>
+</html>

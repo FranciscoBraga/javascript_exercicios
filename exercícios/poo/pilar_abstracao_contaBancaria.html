@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilar Abstração</title>
+
+    <script>
+        class ContaBancaria {
+
+            constructor() {
+                this.agencia = 1078
+                this.numeroConta = 789654
+                this.saldo = 0.00
+                this.limite = 450
+            }
+
+            depositar(valorDeposito) {
+                this.saldo += valorDeposito
+            }
+
+            sacar(valorSaque){
+                this.saldo -= valorSaque
+            }
+
+            imprimirSaldo(){
+                return this.saldo
+            }
+
+        }
+
+        let Conta1 = new ContaBancaria()
+        let Conta2 = new ContaBancaria()
+
+        Conta1.depositar(200)
+        Conta2.depositar(50)
+        Conta1.sacar(20)
+        Conta2.sacar(5)
+        console.log(Conta1.imprimirSaldo())
+        console.log(Conta2.imprimirSaldo())
+    </script>
+
+</head>
+
+<body>
+    <h1><strong>A Abstração: Desvendando o Essencial do Mundo Real em Sistemas</strong></h1>
+    <p>
+        A abstração é um conceito fundamental em diversas áreas do conhecimento, e sua aplicação na criação de sistemas
+        é crucial para a construção de ferramentas eficientes e intuitivas. Em essência, a abstração consiste em isolar
+        o essencial de um objeto ou conceito do mundo real, ignorando detalhes irrelevantes para o seu propósito
+        específico.
+
+        Imagine um banco. Ao abrir uma conta, você não precisa entender as complexas leis bancárias ou o montante de
+        dinheiro que o banco possui. Você apenas precisa saber o que uma conta oferece (depósitos, saques,
+        transferências etc.) e como usá-la para atender às suas necessidades. Essa simplificação é possível graças à
+        abstração, que permite que você interaja com o banco sem se aprofundar em seus mecanismos internos.
+
+        Da mesma forma que visualizamos um carro sem precisar entender todos os seus componentes e processos de
+        funcionamento, a abstração nos permite conceber modelos mentais dos objetos do mundo real, focando nas suas
+        características e ações essenciais.
+    </p>
+
+    <p>Para enteder a abstraçao precisamos enteder outro quatro temas</p>
+    <ul>
+        <li>Entidade - </li>
+        <li>Identidade</li>
+        <li>Características</li>
+        <li>Ações</li>
+    </ul>
+
+    <p>
+
+Entidade, Identidade, Característica e Ações: Uma Análise Detalhada
+Entidade:
+Uma entidade é um objeto distinto e reconhecível que pode existir no mundo real ou abstrato. Pode ser algo concreto, como uma pessoa, animal, planta ou objeto físico, ou algo mais abstrato, como uma ideia, conceito ou evento. As entidades são os elementos básicos que compõem o mundo ao nosso redor e são usadas para estruturar nossa compreensão da realidade.
+
+Exemplos de entidades:
+
+Concreto: Uma pessoa, um carro, uma árvore, uma cidade.
+Abstrato: Uma ideia, um sentimento, uma lei, uma teoria.
+Identidade:
+A identidade é o conjunto de características que definem e distinguem uma entidade das demais. É o que torna uma entidade única e a diferencia de outras. A identidade pode ser baseada em características físicas, como aparência ou comportamento, ou em características mais abstratas, como valores, crenças ou personalidade.
+
+Exemplos de identidade:
+
+Pessoa: Nome, idade, data de nascimento, características físicas, personalidade.
+Animal: Espécie, raça, sexo, idade, pelagem.
+Produto: Marca, modelo, número de série, cor, tamanho.
+Característica:
+Uma característica é um atributo ou qualidade que define uma entidade. As características podem ser físicas, como a cor ou o tamanho, ou funcionais, como a capacidade de realizar uma determinada ação. As características são os elementos que compõem a identidade de uma entidade e a distinguem de outras.
+
+Exemplos de características:
+
+Pessoa: Altura, peso, cor dos olhos, cabelo, personalidade, inteligência.
+Animal: Tamanho, pelagem, cor dos olhos, comportamento, habitat.
+Produto: Material, cor, tamanho, peso, função, preço.
+Ações:
+Uma ação é um movimento ou atividade realizada por uma entidade. As ações podem ser físicas, como andar ou correr, ou verbais, como falar ou escrever. As ações representam a forma como as entidades interagem com o mundo ao seu redor e podem ter um impacto significativo no ambiente.
+
+Exemplos de ações:
+
+Pessoa: Caminhar, correr, falar, escrever, pensar, sentir.
+Animal: Comer, dormir, caçar, brincar, migrar.
+Produto: Funcionar, quebrar, ser utilizado, ser consertado, ser descartado.
+    </p>
+
+</body>
+
+</html>

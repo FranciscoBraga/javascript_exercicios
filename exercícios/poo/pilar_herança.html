@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herança</title>
+    <script>
+         
+         class Animal{
+            constructor(){
+                this.cor = ''
+                this.altura = null
+                this.caracteristica = ''
+                this.peso = null
+            }
+
+            comer(){
+                console.log("Comendo")
+            }
+
+            dormir(){
+                console.log("Dormindo")
+            }
+
+         }
+
+
+        class Cao extends Animal{
+            constructor(){
+                super()
+                this.temPelo = true
+            }
+            latir(){
+                console.log("Latindo")
+            }
+
+        }
+
+        class Coruja{
+            constructor(){
+                this.cor = 'Branco e Cinza'
+                this.altura = 10
+                this.caracteristica = 'bico'
+                this.temPena = true
+            }
+
+            comer(){
+                console.log("Comendo")
+            }
+
+            dormir(){
+                console.log("Dormindo")
+            }
+
+            voar(){
+                console.log("Voando")
+            }
+
+        }
+
+        class Dourado{
+
+            constructor(){
+                this.cor = 'Dourando'
+                this.altura = 50
+                this.caracteristica = 'nadadeiras'
+                this.temEscamas = true
+            }
+
+            comer(){
+                console.log("Comendo")
+            }
+
+            dormir(){
+                console.log("Dormindo")
+            }
+
+            nadar(){
+                console.log("Nadando")
+
+        }
+    }
+
+    let bilu= new Cao()
+    let dudu = new Coruja()
+    let biquinho = new Dourado()
+
+    console.log(bilu)
+    console.log(dudu)
+    console.log(biquinho)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
