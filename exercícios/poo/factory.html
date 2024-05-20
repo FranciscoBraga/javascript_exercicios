@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Padrão de Projeto - Factory</title>
+     <script>
+        //objeto
+         let Bicicleta = {
+            cor:"Amarela",
+            aro:12,
+            marcha:3,
+
+            pedalar(){console.log("Pedalando")}
+         }
+         //objeto
+         let Bicicleta2 = {
+            cor:"Verde",
+            aro:12,
+            marcha:5,
+
+            pedalar(){console.log("Pedalando")}
+         }
+         
+         console.log(Bicicleta)
+         console.log(Bicicleta2)
+
+         let BicicletaFactory = function(cor,marcha,aro){
+            return{
+               cor:cor,
+               marcha:marcha,
+               aro:aro,
+               pedalar(){console.log("Pedalando")}
+            }
+         }
+
+         let Bicicleta3 = BicicletaFactory("Branca",5,12)
+
+         console.log(Bicicleta3)
+
+         let Bicicleta4 = BicicletaFactory("Cinza",3,12)
+
+         console.log(Bicicleta4)
+
+
+     </script>
+</head>
+<body>
+    
+</body>
+</html>

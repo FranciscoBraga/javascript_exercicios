@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring</title>
+    <script>
+        //destructuring com arrays []
+        let frutas  = ['Abacaxi','Laranja','Melão']
+        let  a = frutas[0]
+        let  b = frutas[1]
+        let  c = frutas[2]
+        // problema a verbosidade
+        console.log(frutas)
+
+        let [d,,e] = frutas
+        console.log(d,e)
+
+        // destructuring com multiplo arrays
+        let pessoa = [['José','Maria'],['Encanador','Engenheiro','Mecânico']]
+
+        let [,[,,f]] = pessoa
+
+        console.log(f)
+
+        let[[,g],[h]] = pessoa
+        console.log(g,h)
+
+        function pegaFruta([a,,c]){
+            console.log(a,c)
+        }
+
+        pegaFruta(frutas)
+
+        //operador rest
+
+        let [z,...x] = frutas
+        console.log(z)
+        console.log(x)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

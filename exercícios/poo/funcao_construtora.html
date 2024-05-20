@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objeto Literal Inclusão Atributo</title>
+    <script>
+       let Carro = function (){
+            this.cor = "amarelo"
+            this.modelo = "fusca"
+            this.ano = "2000"
+            this.velocidadeAtual= 0
+            this.velociadadeMaxima = 180
+            //Encapsular 
+            this.acelerar = function() {
+                
+                let velocidade = this.velocidadeAtual+=10
+                this.setVelocidadeAtual(velocidade)
+            }
+
+            this.getVelocidadeAtual = function () {
+                return this.velocidadeAtual
+            }
+
+            this.setVelocidadeAtual = function (velocidade ) {
+                this.velocidadeAtual = velocidade 
+            }
+       }
+
+       let carro = new Carro()
+
+       console.log(`A velocidade atual é :${carro.getVelocidadeAtual()}`)
+       carro.acelerar(10)
+       console.log(`A velocidade atual é :${carro.getVelocidadeAtual()}`)
+
+       
+       
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

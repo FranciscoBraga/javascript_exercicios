@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype - Herança(Prototype Chain)</title>
+    <script>
+        //todos objetos então de Object 
+
+        let animal = {atri1:'a'}
+        let vertebrado = {atri2:'b'}
+        let ave = {atri3:'c'}
+
+        console.log(ave.atri3,ave.atri2)
+
+
+        //como podemos fazer com que ave herder os dados de vertebrado
+        //
+        
+        let animal1 = {atri1:'a'}
+        let vertebrado1 = {atri2:'b'}
+        let ave1 = {__proto__: vertebrado1,atri3:'c'}
+
+        console.log(ave1.atri3,ave1.atri2)
+
+
+        //ave herdando de animail - formando uma cadeia de prototipagem
+
+
+        let animal2 = {atri1:'a'}
+        let vertebrado2 = {__proto__: animal2, atri2:'b'}
+        let ave2 = {__proto__: vertebrado2 ,atri3:'c'}
+
+        console.log(ave2.atri3,ave2.atri2,ave2.atri1)
+
+
+        
+        //incluido  um novo atributo
+        
+        Object.prototype.atri4 = 'd'
+
+        let animal3 = {atri1:'a'}
+        let vertebrado3 = {__proto__: animal2, atri2:'b'}
+        let ave3 = {__proto__: vertebrado2 ,atri3:'c'}
+
+        console.log(ave3.atri3,ave3.atri2,ave3.atri1, ave3.atri4)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

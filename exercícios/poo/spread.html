@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Operador Spread/Rest(espalhar/Junta (...))</title>
+</head>
+<script>
+    let texto = "espalhando texto"
+    console.log(texto)
+    console.log(...texto)
+    console.log([...texto])
+
+    //array
+    let cursoJava = ["Spring","Java","JSF"]
+    let cursoBanco = ["Banco Relacional","Oracle","MongoDB"]
+    let cursoCompleto = ["IOS",...cursoBanco,...cursoJava]
+    console.log(cursoJava)
+    console.log(...cursoBanco)
+    console.log(cursoCompleto)
+
+    //obejtos
+   let pessoa = {nome:"Joao",idade:"30"}
+   let pessoaEndereco = {rua:"Rondonopolis", numero:97}
+   let pessoaCompleto ={peso:90, ...pessoa,...pessoaEndereco}
+   console.log(pessoa)
+    console.log(pessoaEndereco)
+    console.log(pessoaCompleto)
+   
+
+
+</script>
+<body>
+    
+</body>
+</html>

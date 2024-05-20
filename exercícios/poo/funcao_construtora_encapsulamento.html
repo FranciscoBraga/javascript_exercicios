@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Função Construtora- Encapsulamento de Atributos e Métodos</title>
+    <script>
+        let Carro = function () {
+
+
+            this.cor = "amarelo"
+            this.modelo = "fusca"
+            this.ano = "2000"
+            this.velocidadeAtual = 0
+            this.velociadadeMaxima = 180
+            //Encapsular 
+            this.acelerar = function () {
+
+                let velocidade = this.velocidadeAtual += 50
+                if (velocidade <= this.velociadadeMaxima) {
+                    this.setVelocidadeAtual(velocidade)
+                } else {
+                    this.velocidadeAtual = this.velociadadeMaxima
+                }
+            }
+
+            this.getVelocidadeAtual = function () {
+                return this.velocidadeAtual
+            }
+
+            this.setVelocidadeAtual = function (velocidade) {
+
+                this.velocidadeAtual = velocidade
+
+            }
+        }
+
+        let carro = new Carro()
+
+        console.log(`A velocidade atual é :${carro.getVelocidadeAtual()}`)
+        carro.acelerar()
+        console.log(`A velocidade atual é :${carro.getVelocidadeAtual()}`)
+        carro.acelerar()
+        console.log(`A velocidade atual é :${carro.getVelocidadeAtual()}`)
+        carro.acelerar()
+        console.log(`A velocidade atual é :${carro.getVelocidadeAtual()}`)
+        carro.acelerar()
+        console.log(`A velocidade atual é :${carro.getVelocidadeAtual()}`)
+        carro.acelerar()
+        console.log(`A velocidade atual é :${carro.getVelocidadeAtual()}`)
+        // para haver uma alteração na velocidade de uma carro real temos que altera o motor dele
+        carro.velocidadeAtual = 280
+        console.log(`A velocidade atual é :${carro.getVelocidadeAtual()}`)
+
+
+        let Carro2 = function () {
+            //através do escopo, no contexto da função criamos o encapsulamento , pois o javascript
+            //não tem operador private
+            let velocidadeMaxima = 180
+            let quilomentrosRodadados = 0
+            this.cor = "amarelo"
+            this.modelo = "fusca"
+            this.ano = "2000"
+            this.velocidadeAtual = 0
+            //this.velociadadeMaxima = 180
+            //Encapsular 
+          
+            this.acelerar = function () {
+
+                let velocidade = this.velocidadeAtual += 50
+                if (velocidade <= velocidadeMaxima) {
+                    this.setVelocidadeAtual(velocidade)
+                    
+                } else {
+                    this.velocidadeAtual = velocidadeMaxima
+                }
+                setQuilometrosRodados(0.07)
+                console.log(quilomentrosRodadados)
+            }
+
+            this.getVelocidadeAtual = function () {
+                return this.velocidadeAtual
+            }
+
+            this.setVelocidadeAtual = function (velocidade) {
+                this.velocidadeAtual = velocidade
+
+            }
+
+           let setQuilometrosRodados = function(q){
+                quilomentrosRodadados += q
+            }
+        }
+
+        let carro2 = new Carro2()
+
+        console.log(`A velocidade atual é :${carro2.getVelocidadeAtual()}`)
+        carro2.acelerar()
+        console.log(`A velocidade atual é :${carro2.getVelocidadeAtual()}`)
+        carro2.acelerar()
+        console.log(`A velocidade atual é :${carro2.getVelocidadeAtual()}`)
+        carro2.acelerar()
+        console.log(`A velocidade atual é :${carro2.getVelocidadeAtual()}`)
+        carro2.acelerar()
+        console.log(`A velocidade atual é :${carro2.getVelocidadeAtual()}`)
+        carro2.acelerar()
+        console.log(`A velocidade atual é :${carro2.getVelocidadeAtual()}`)
+        console.log(`A velocidade atual é :${carro2.getVelocidadeAtual()}`)
+        carro2.velocidadeMaxima = 200
+        console.log(carro2.velocidadeMaxima)
+        console.log(`A velocidade atual é :${carro2.getVelocidadeAtual()}`)
+        console.log(carro)
+        console.log(carro2)// atributos ficam privados
+        console.log(`A velocidade atual é :${carro2.getVelocidadeAtual()}`)
+        
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

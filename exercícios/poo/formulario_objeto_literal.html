@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Objeto Literal</title>
+    <style>
+
+    </style>
+    <script>
+        function enviarFormulario(){
+            console.log("olá")
+            let nome = document.getElementById("nome").value
+            let idade = document.getElementById("idade").value
+            let sexo = document.getElementById("sexo").value
+            let profisao = document.getElementById("profisao").value
+
+            /* var pessoa ={
+                nome,
+                idade,
+                sexo,
+                profisao,
+                verPessoa(){
+                    console.log(`${this.nome} tem ${this.idade} anos, e do gênero ${this.sexo} e tem a ${this.profisao}`)
+                }
+            }
+           console.log(pessoa)
+            pessoa.verPessoa() */
+        }
+
+        
+       
+    </script>
+</head>
+<body>
+     <form >
+        <input type="text" name="nome" id="nome">
+        <input type="text" name="idade" id="idade">
+        <input type="radio" name="sexo" id="sexo" value="masculino">masculino
+        <input type="radio" name="sexo" id="sexo" value="feminino">feminino
+        <input type="text" name="profisao" id="profisao">
+
+        <button  type="submit" onclick="enviarFormulario()">Enviar</button>
+     </form>
+
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring</title>
+    <script>
+        //destructuring com objetos {}
+        let produtos  = {
+            preco : 1000,
+            descricao : "Tv",
+            cor:"cinza",
+            detalhes:{
+                fabricante :"abc",
+                modelo: "xzy"
+            }
+        }
+
+        console.log(produtos)
+
+        let {preco,descricao} = produtos
+        console.log(preco,descricao)
+
+        let{ preco:p,descricao:d} = produtos
+        console.log(d,p)
+        //incluindo um novo atributo
+        let {preco:pr,descricao:de,desconto = 5} = produtos
+        console.log(de,pr,desconto)
+
+        let {detalhes:{fabricante,modelo}} = produtos
+        console.log(fabricante,modelo)
+
+        function exibeProdutos({preco,descricao}){
+            console.log(preco,descricao)
+        }
+
+        exibeProdutos(produtos)
+
+        //operador ...rest
+        let {preco:prec,...pro} = produtos
+        console.log(prec)
+        console.log(pro)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

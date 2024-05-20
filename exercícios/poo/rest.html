@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operador Spread/Rest(espalhar/Junta (...))</title>
+</head>
+<script>
+     //operador spread/rest 
+    function soma(...param){
+        let resultado = 0
+
+        param.forEach(v => resultado += v)        
+        return resultado
+
+    }
+
+    function multiplicador(m,...param){
+        let resultado = 0
+
+        param.forEach(v =>  resultado += m * v)        
+        return resultado
+
+    }
+
+    console.log(soma(10,-8,3,15,20,10,-10))
+    console.log(multiplicador(5,2,3,4))
+</script>
+<body>
+    
+</body>
+</html>

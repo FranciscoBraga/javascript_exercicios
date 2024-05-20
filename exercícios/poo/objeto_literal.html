@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objeto Literal - Comparação com Classe</title>
+    <script>
+        //classe
+        class Produto{
+            constructor(descricao,preco){
+                this.descricao = descricao,
+                this.preco = preco
+            }
+
+            verDescricao(){
+                console.log(`Compre  ${this.descricao} , por apenas R$  ${this.preco}`)
+            }
+        }
+
+        let produto = new Produto('Tv 29',2500)
+        produto.verDescricao()
+
+        //objeto literal - são objetos únicos
+        let objetoLiteralProduto = {
+            descricao : "Geladeira",
+            preco : 5000,
+            verDescricao :  function(){
+                console.log(`Compre  ${this.descricao} , por apenas R$  ${this.preco}`)
+            }
+        }
+      
+        objetoLiteralProduto.verDescricao()
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
