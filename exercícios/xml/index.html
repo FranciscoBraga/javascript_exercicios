@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XML</title>
+    <script>
+        function getFilmes(){
+
+            let xmlFilme = new XMLHttpRequest()
+            xmlFilme.open('GET','http://127.0.0.1:5500/filmes.xml.preview')
+            xmlFilme.onreadystatechange = ()=>{
+                if(xmlFilme.readyState == 4 && xmlFilme.status == 200){
+                    let xmlFilmes = xmlFilme.responseText
+                    console.log(xmlFilmes)
+                }
+                if(xmlFilme == 4 && xmlFilme == 404){ 
+                }
+            }
+            xmlFilme.send()
+        }
+    </script>
+</head>
+<body onload="getFilmes()">
+    <div id="filmes">
+
+    </div>
+    
+</body>
+</html>

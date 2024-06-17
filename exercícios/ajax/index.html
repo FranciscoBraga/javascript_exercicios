@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="recursos/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" /></head>
+    <script>
+        function requisitarPagina(url){
+                let ajax = new XMLHttpRequest()
+
+                if(!document.getElementById('loading')){
+                    let imgLoading = document.createElement('img')
+                    imgLoading.id='loading'
+                    imgLoading.src = 'recursos/img/loading.gif'
+                    imgLoading.className = 'loading'
+                    document.getElementById('content').appendChild(imgLoading)
+                }
+               
+                //requisição não iniciada , state = 0
+                console.log(ajax.readyState)
+
+                ajax.open('GET',url)
+
+                //conexão estabelecida com o servidor, state = 1
+                //console.log(ajax.readyState)
+
+                //fica verificando o progresso da requisição
+                ajax.onreadystatechange =   ()=>{
+                    if(ajax.readyState == 4 && ajax.status == 200){
+
+                        document.getElementById('content').innerHTML = ajax.responseText
+                        //document.getElementById('loading').remove()
+                    }
+                    if(ajax.readyState == 4 && ajax.status == 404){
+
+                        document.getElementById('content').innerHTML = "tente mais tarde!!!"
+                        //document.getElementById('loading').remove()
+                    }
+                   // console.log(ajax.readyState)
+                }
+                ajax.send()
+                console.log(ajax)
+        }
+    </script>
+</head>
+    <body onload="requisitarPagina('inicio.html')">
+
+    <header>    
+        <nav>
+            <ul>
+                <li><a href="#" onclick="requisitarPagina('inicio.html')">Home</a><i class="fa-solid fa-shop"></i></li>
+                <li><a href="#" onclick="requisitarPagina('casa.html')">Casa</a><i class="fa-solid fa-house"></i></li>
+                <li><a href="#"onclick="requisitarPagina('pet.html')">pet</a><i class="fa-solid fa-paw"></i></li>
+                <li><a href="#"onclick="requisitarPagina('infantil.html')">Infantil</a> <i class="fa-solid fa-child"></i></li>
+                <li><a href="#"onclick="requisitarPagina('feminino.html')">feminino </a><i class="fa-solid fa-person-dress"></i></li>
+                <li><a href="#"onclick="requisitarPagina('masculino.html')">masculino</a><i class="fa-solid fa-person"></i></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="content"></div>
+
+
+    <footer>
+        <div>
+            Todos os direitos resevados Meu Lar
+        </div>
+    </footer>
+</body>
+</html>
