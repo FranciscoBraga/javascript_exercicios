@@ -2,7 +2,7 @@
 
 Este é um simples projeto de HTML com JavaScript incorporado, que demonstra o uso do Javascript.
 
-## o Arquivo variavel.html 
+## Arquivo variavel.html 
 
 O código JavaScript demonstra o uso de variáveis de diferentes tipos:
 
