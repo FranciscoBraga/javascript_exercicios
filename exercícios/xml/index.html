@@ -1,30 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XML</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="xmltojson.js"></script>
     <script>
-        function getFilmes(){
+        function getFilmes() {
 
             let xmlFilme = new XMLHttpRequest()
-            xmlFilme.open('GET','http://127.0.0.1:5500/filmes.xml.preview')
-            xmlFilme.onreadystatechange = ()=>{
-                if(xmlFilme.readyState == 4 && xmlFilme.status == 200){
+            xmlFilme.open('GET', 'http://127.0.0.1:5500/filmes.xml')
+            xmlFilme.onreadystatechange = () => {
+                if (xmlFilme.readyState == 4 && xmlFilme.status == 200) {
                     let xmlFilmes = xmlFilme.responseText
-                    console.log(xmlFilmes)
+
+                    let parser = new DOMParser()
+
+                    domFilmes = parser.parseFromString(xmlFilmes, 'text/xml')
+
+                    let jsonFilmes = xmlToJson(domFilmes)
+
+                   // console.log(jsonFilmes)
+
+                    for (let i in jsonFilmes['filmes']['filme']) {
+
+                        let filmes = jsonFilmes['filmes']['filme'][i]
+                        console.log(jsonFilmes['filmes']['filme'][i])
+
+                        let divFilme = document.createElement('div')
+
+                        divFilme.className = 'filme'
+
+                        let divNameFilme = document.createElement('div')
+
+                        divNameFilme.className = 'nameFilme'
+
+                        let pName = document.createElement('p')
+
+                        pName.innerHTML = filmes['titulo']['#text']
+
+                        let divDataFilme = document.createElement('div')
+
+                        divDataFilme.className = 'dataFilme' 
+
+                        let elenco = ''
+                        let contElenco = ''
+                        for(let e in filmes['elenco']['ator']){
+                            if(elenco != ''){
+                               elenco +=', '
+                            }
+                            elenco += filmes['elenco']['ator'][e]['#text']
+                            contElenco++
+
+                           if(filmes['elenco']['ator'].length == contElenco) elenco +="."
+                           
+                        }
+
+                        let genero = ''
+                        let contGenero = ''
+                        for(let g in filmes['genero']){
+                            if(genero != ''){
+                                genero += ', '
+                            }
+                            genero += filmes['genero'][g]['#text']
+                            contGenero++
+                            if(filmes['genero'].length == contGenero) genero +="."
+                            
+                        }
+
+                        let pResumo  = document.createElement('p')
+
+                        pResumo.innerHTML = 'Resumo : '+ filmes['resumo']['#text']
+
+                        let pElenco  = document.createElement('p')
+                        
+                        pElenco.innerHTML = 'Elenco : ' + elenco
+
+                        let pGenero = document.createElement('p')
+
+                        pGenero.innerHTML = 'Genero : ' + genero
+
+                        let pDataLancamento = document.createElement('p')
+
+                        pDataLancamento.innerHTML = 'Data Lançamento : ' + filmes['dataLancamento']['#text'] +" - "+ filmes['dataLancamento']['@attributes']['pais']               
+                      
+                        document.getElementById('filmes').appendChild(divFilme)
+                        divFilme.appendChild(divNameFilme)
+                        divNameFilme.appendChild(pName)
+                        divFilme.appendChild(divDataFilme)
+                        divDataFilme.append(pElenco,pGenero)
+                        /* divDataFilme.appendChild(pGenero) */
+                        divDataFilme.appendChild(pResumo)
+                        divDataFilme.appendChild(pDataLancamento)
+
+                       // sem retorno console.log(divDataFilme.append(pElenco,pGenero))
+                       // com retorno console.log(divDataFilme.appendChild(pResumo))
+
+
+        /*< div class="filme efeitoFilme" >
+                <div class="nameFilme">
+                    <p>Nome do filme</p>
+                </div>
+                <div class="dataFilme">
+                    <p>informações do filme</p>
+                    <p>informações do filme</p>
+                    <p>informações do filme</p>
+                    <p>informações do filme</p>
+                    
+                </div>
+        </div > */
+                    }
                 }
-                if(xmlFilme == 4 && xmlFilme == 404){ 
+                if (xmlFilme == 4 && xmlFilme == 404) {
                 }
             }
             xmlFilme.send()
         }
     </script>
 </head>
+
 <body onload="getFilmes()">
     <div id="filmes">
 
     </div>
-    
+
 </body>
+
 </html>
