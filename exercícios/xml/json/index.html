@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Json</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script>
+        function getFilmes() {
+
+         
+            let jsonFilme = new XMLHttpRequest()
+            console.log("jsonFilme",jsonFilme)
+            jsonFilme.open('GET', 'http://127.0.0.1:5500/filmes.json')
+            console.log("jsonFilme",jsonFilme)
+            jsonFilme.onreadystatechange = () => {
+                console.log("jsonFilme",jsonFilme)
+                console.log("jsonFilme.readyState",jsonFilme.readyState)
+                console.log("jsonFilme.status",jsonFilme.status)
+                if (jsonFilme.readyState == 4 && jsonFilme.status == 200) {
+                    let jsonFilmes = jsonFilme.responseText
+
+                    let objFilmes = JSON.parse(jsonFilmes)
+                    for (let i in objFilmes.filmes) {
+
+                        let filmes = jsonFilmes.filmes[i]
+
+
+                        let divFilme = document.createElement('div')
+
+                        divFilme.className = 'filme'
+
+                        let divNameFilme = document.createElement('div')
+
+                        divNameFilme.className = 'nameFilme'
+
+                        let pName = document.createElement('p')
+
+                        pName.innerHTML = filmes.titulo
+
+                        let divDataFilme = document.createElement('div')
+
+                        divDataFilme.className = 'dataFilme' 
+
+                        let elenco = ''
+                        let contElenco = ''
+                        for(let e in filmes.elenco){
+                            if(elenco != ''){
+                               elenco +=', '
+                            }
+                            elenco += filmes.elenco[e].ator
+                            contElenco++
+
+                           if(filmes.elenco.length == contElenco) elenco +="."
+                           
+                        }
+
+                        let genero = ''
+                        let contGenero = ''
+                        for(let g in filmes.generos){
+                            if(genero != ''){
+                                genero += ', '
+                            }
+                            genero += filmes.generos[g].genero
+                            contGenero++
+                            if(filmes['genero'].length == contGenero) genero +="."
+                            
+                        }
+
+                        let pResumo  = document.createElement('p')
+
+                        pResumo.innerHTML = 'Resumo : '+ filmes['resumo']
+
+                        let pElenco  = document.createElement('p')
+                        
+                        pElenco.innerHTML = 'Elenco : ' + elenco
+
+                        let pGenero = document.createElement('p')
+
+                        pGenero.innerHTML = 'Genero : ' + genero
+
+                        let pDataLancamento = document.createElement('p')
+
+                        pDataLancamento.innerHTML = 'Data Lançamento : ' + filmes.dataLancamento.data +" - "+ filmes.dataLancamento.pais               
+                      
+                        document.getElementById('filmes').appendChild(divFilme)
+                        divFilme.appendChild(divNameFilme)
+                        divNameFilme.appendChild(pName)
+                        divFilme.appendChild(divDataFilme)
+                        divDataFilme.append(pElenco,pGenero)
+
+      
+                    }
+                }
+                if (jsonFilme == 4 && jsonFilme == 404) {
+                }
+            } 
+            jsonFilme.send()
+        }
+    
+    </script>
+</head>
+
+<body onload="getFilmes()">
+    <div id="filmes">
+
+    </div>
+
+</body>
+
+</html>
