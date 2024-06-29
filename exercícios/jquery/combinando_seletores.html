@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combinando Seletores</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!--<script src="jquery-3.7.1.min.js"></script>-->
+</head>
+<body>
+    <h1>Combinando Seletores -Selecionando elementos HTML 2</h1>
+
+    <div class="menu1"> div 1</div>
+    <div> div 2</div>
+
+    <ul class="lista1">
+        <li class="menu1">menu 1 - item 1</li>
+        <li class="menu2">menu 1 - item 2</li>
+        <li class="menu2">menu 1 - item 3</li>
+        <li class="menu2">menu 1- item 4</li>
+        <li class="menu2">menu 1 - item 5</li>
+        <li class="menu2">menu 1- item 6</li>
+    </ul>
+
+    <ul>
+        <li class="menu1">menu 2 - item 1</li>
+        <li class="menu2">menu 2 - item 2</li>
+        <li class="menu2">menu 2 - item 3</li>
+        <li class="menu2">menu 2 - item 4</li>
+        <li class="menu2">menu 2 - item 5</li>
+        <li class="menu2">menu 2 - item 6</li>
+    </ul>
+
+    <input type="text" placeholder="campo 1">
+
+    <select name="" id="">
+        <option value="" class="menu1">--selecione uma opção--</option>
+        <option value=""> opção 1</option>
+        <option value=""> opção 2</option>
+    </select>
+
+    <br/>
+
+    <img src="carro.jpg" alt="carro" id="imagem">
+    
+</body>
+
+<script>
+    //selecionar  elementos por classe  de tag especifica
+    console.log($('li.menu1'))
+    //seleciona elementos por classe de classe específica
+    console.log($('.lista1 .menu1'))
+    //Atuação sobre o array  de retorno dos elementos selecionados
+    console.log($('.lista1 .menu2'))
+    console.log($('.lista1 .menu2:first'))
+    console.log($('.lista1 .menu2:last'))
+    console.log($('.lista1 .menu2:even'))
+    console.log($('.lista1 .menu2:odd'))
+</script>
+</html>

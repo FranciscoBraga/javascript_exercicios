@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>primeiro passo jquery</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!--<script src="jquery-3.7.1.min.js"></script>-->
+</head>
+<body>
+    <h1>Seletores - Selecionando elementos HTML</h1>
+
+    <div> div 1</div>
+    <div> div 2</div>
+
+    <ul id="menu1">
+        <li class="menu1">menu 1 - item 1</li>
+        <li class="menu1">menu 1 - item 2</li>
+        <li class="menu1">menu 1 - item 3</li>
+        <li class="menu1">menu 1- item 4</li>
+    </ul>
+
+    <ul>
+        <li>menu 2 - item 1</li>
+        <li>menu 2 - item 2</li>
+        <li>menu 2 - item 3</li>
+        <li>menu 2 - item 4</li>
+    </ul>
+
+    <input type="text" placeholder="campo 1">
+
+    <select name="" id="">
+        <option value="">--selecione uma opção--</option>
+        <option value=""> opção 1</option>
+        <option value=""> opção 2</option>
+    </select>
+
+    <br/>
+
+    <img src="carro.jpg" alt="carro" id="imagem">
+    
+</body>
+
+<script>
+    console.log($('h1'))
+    console.log($('div'))
+    console.log($('ul'))
+    console.log($('li'))
+    console.log($('input'))
+    console.log($('select'))
+    console.log($('option'))
+    console.log($('img'))
+    console.log($('.menu1'))
+    console.log($('#menu1'))
+    console.log($('#imagem'))
+</script>
+</html>

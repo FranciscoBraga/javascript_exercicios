@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>primeiro passo jquery</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!--<script src="jquery-3.7.1.min.js"></script>-->
+    <script src="sequencia_execucao.js"></script>
+</head>
+
+<body>
+
+    <script>
+           console.log('não tem nada, pois a excução ocorreu antes da renderização do elemento',$('#exemplo1')) 
+
+        function teste(){
+            console.log('não tem nada',$('#exemplo1')) 
+        }
+
+        teste()
+
+        //função de callback
+        $(document).ready(function(){
+            function teste(){
+                console.log('Agora será sim, pois método',$('#exemplo1')) 
+            }
+
+            teste()
+        })
+
+        function teste(){
+                console.log('passando a função teste() como parâmetro',$('#exemplo1')) 
+            }
+
+        $(teste)
+
+        $(function(){
+                console.log('função anônima',$('#exemplo1')) 
+            })
+
+     
+    </script>
+    
+    <h1 id="exemplo1">Sequência de Execução</h1>
+</body>
+
+</html>
