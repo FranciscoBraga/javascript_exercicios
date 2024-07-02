@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>primeiro passo jquery</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!--<script src="jquery-3.7.1.min.js"></script>-->
+    <script>
+        $(document).ready(() => {
+
+            $('#nome').val('Francisco O Braga')
+
+            console.log($('#nome').val())
+
+            $('#linguagem').val('1')
+
+            console.log($('#linguagem').val())
+
+            console.log($('#genero:checked').val())
+
+            $.each($('#interesse:checked'), (indece, valor) => {
+                console.log(indece, valor.value)
+            })
+
+        })
+    </script>
+</head>
+
+<body>
+    <h1>Manipulando e Recuperando Valores Checkbox Radio e Loop com $.each()</h1>
+
+    <label for="nome">Nome</label> <br />
+    <input type="text" id="nome" name="nome">
+    <br />
+    <br />
+    <br />
+    <label for="encotrou">Onde você encontrou ?</label> <br />
+    <select name="linguagem" id="linguagem">
+        <option value="1">Google</option>
+        <option value="2">Bing</option>
+        <option value="3">Outros</option>
+    </select>
+    <br />
+    <br />
+    <br />
+    <label for="genero">Gênero</label> <br />
+    <input type="radio" name="genero" id="genero" value="f" checked>Feminino <br />
+    <input type="radio" name="genero" id="genero" value="m">Masculino <br />
+    <br />
+    <label for="interesse">Interesse</label> <br />
+    <input type="checkbox" name="interesse" id="interesse" value="javascript" checked>javascript <br>
+    <input type="checkbox" nem="interesse" id="interesse" value="Java">Java <br>
+    <input type="checkbox" name="interesse" id="interesse" value="nodejs" checked>node js <br>
+    <input type="checkbox" nem="interesse" id="interesse" value="GO">Go <br>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>primeiro passo jquery</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!--<script src="jquery-3.7.1.min.js"></script>-->
+    <script>
+        $(document).ready(()=>{
+            console.log($('#like').val())
+            console.log($('#linguagem').val())
+            $('#like').val('Go')
+            console.log($('#like').val())
+            $('#linguagem').val(2) 
+            console.log($('#linguagem').val())
+
+        })
+    </script>
+</head>
+
+<body> 
+    <h1>Manipulando e Recuperando Valores</h1>
+
+    <input type="text" id="like" value="Gosto de javascript">
+    <select name="linguagem" id="linguagem">
+        <option value="1">javascript</option>
+        <option value="2">Java</option>
+        <option value="3">C#</option>
+    </select>
+</body>
+
+</html>

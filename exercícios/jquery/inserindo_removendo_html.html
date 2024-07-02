@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>primeiro passo jquery</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!--<script src="jquery-3.7.1.min.js"></script>-->
+    <script>
+        $(document).ready(()=>{
+          
+            //incluindo elemento no final da lista 
+            $('#lista1').append('<li>item 6</li>')
+            //incluindo elemento no inicio da lista 
+            $('#lista2').prepend('<div> item 0 </div>')
+            //inseri antes do elemento declarado
+            $('#lista1').before('<h3>Lista de item</h3>')
+            //inseri depois do elemento declarado
+            $('#lista2').after('<p>fim da lista2</p>')
+            //substitui os elementos que estão dentro do id
+            $('#lista1').html('<p>Inserido com o método html</p>')
+            $('.remover').remove()
+        })
+    </script>
+</head>
+
+<body> 
+    <h1>Inserindo e removendo elementos HTML</h1>
+
+    <ul id="lista1">
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+        <li class="remover">item 4</li>
+        <li>item 5</li>
+    </ul>
+
+    <div id="lista2">
+        <div>item 1</div>
+        <div>item 2</div>
+        <div>item 3</div>
+        <div class="remover">item 4</div>
+        <div>item 5</div>
+    </div>
+    <hr>
+</body>
+
+</html>
