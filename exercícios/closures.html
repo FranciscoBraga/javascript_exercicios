@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closures no JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2 {
+            color: #333;
+        }
+
+        code {
+            /* background: #f1f1f1; */
+            padding: 4px;
+            border-radius: 4px;
+            font-size: 1.1em;
+        }
+
+        pre {
+            background: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+    <script>
+        function externa() {
+            let contador = 0;
+
+            function interna() {
+                contador++;
+                console.log(contador);
+            }
+
+            return interna;
+        }
+
+        const func = externa();
+        func(); // Saída: 1
+        func(); // Saída: 2
+        func(); // Saída: 3
+    </script>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Closures no JavaScript</h1>
+
+        <p>Em JavaScript, <strong>closures</strong> são uma característica poderosa que ocorre quando uma função
+            "lembra" do ambiente onde ela foi criada, mesmo que seja executada fora desse ambiente. Em termos simples,
+            closures permitem que uma função interna acesse variáveis de uma função externa mesmo depois que essa função
+            externa tenha terminado sua execução.</p>
+
+        <h2>Como funciona?</h2>
+
+        <p>Quando uma função é criada dentro de outra função, a função interna tem acesso a três níveis de variáveis:
+        </p>
+        <ol>
+            <li>Variáveis locais da função interna.</li>
+            <li>Variáveis da função externa.</li>
+            <li>Variáveis globais.</li>
+        </ol>
+
+        <p>Mesmo após a função externa ter sido executada e seu contexto encerrado, a função interna continua a manter
+            uma "referência" ao ambiente no qual foi criada, incluindo as variáveis da função externa. Isso é o que
+            chamamos de <strong>closure</strong>.</p>
+
+        <h2>Exemplo básico</h2>
+
+        <pre>
+<code>
+function externa() {
+  let contador = 0;
+
+  function interna() {
+    contador++;
+    console.log(contador);
+  }
+
+  return interna;
+}
+
+const func = externa();
+func(); // Saída: 1
+func(); // Saída: 2
+func(); // Saída: 3
+</code>
+        </pre>
+
+        <p>Neste exemplo:</p>
+        <ul>
+            <li>A função <code>interna</code> é criada dentro da função <code>externa</code>.</li>
+            <li>A função <code>interna</code> tem acesso à variável <code>contador</code> da função
+                <code>externa</code>, mesmo depois que <code>externa</code> já terminou a execução.</li>
+            <li>Cada vez que <code>func()</code> é chamado, ele lembra do valor da variável <code>contador</code> e
+                continua incrementando.</li>
+        </ul>
+
+        <h2>Usos comuns de closures</h2>
+
+        <ul>
+            <li><strong>Encapsulamento</strong>: Permite que você crie funções privadas dentro de um escopo mais amplo.
+            </li>
+            <li><strong>Funções de fábrica</strong>: Pode gerar funções com estados específicos.</li>
+            <li><strong>Callbacks e eventos</strong>: O closure permite que callbacks mantenham acesso ao ambiente no
+                qual foram definidos, mesmo quando são executados mais tarde.</li>
+        </ul>
+
+        <p>Os closures são uma parte fundamental de muitos padrões em JavaScript, como funções de callback, IIFE
+            (Immediately Invoked Function Expressions) e manipuladores de eventos.</p>
+    </div>
+
+</body>
+
+</html>
