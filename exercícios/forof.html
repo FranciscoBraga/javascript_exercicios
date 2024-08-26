@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicação do for...of em JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            line-height: 1.6;
+        }
+        pre {
+            background-color: #e8e8e8;
+            padding: 10px;
+            border-radius: 5px;
+            border-left: 5px solid #333;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Entendendo o Loop <code>for...of</code> em JavaScript</h1>
+
+    <p>O loop <code>for...of</code> em JavaScript é usado para iterar sobre elementos de estruturas de dados <strong>iteráveis</strong>, como arrays, strings, Map, Set e outros.</p>
+    
+    <p>Ele funciona atribuindo o próximo valor da estrutura iterada a uma variável especificada em cada iteração, ao contrário do <code>for...in</code>, que itera sobre as chaves ou índices. O <code>for...of</code> itera diretamente sobre os valores.</p>
+    
+    <h2>Sintaxe</h2>
+    <pre><code>for (variável of iterável) {
+    // Código a ser executado
+}</code></pre>
+
+    <h2>Exemplo com Arrays</h2>
+    <p>No exemplo abaixo, o loop percorre um array e imprime cada valor:</p>
+    <pre><code>const array = ['a', 'b', 'c'];
+for (let value of array) {
+    console.log(value);
+}</code></pre>
+
+    <p><strong>Saída:</strong></p>
+    <pre><code>a
+b
+c</code></pre>
+
+    <h2>Exemplo com Strings</h2>
+    <p>O <code>for...of</code> também pode ser utilizado para iterar sobre cada caractere de uma string:</p>
+    <pre><code>const string = "Hello";
+for (let char of string) {
+    console.log(char);
+}</code></pre>
+
+    <p><strong>Saída:</strong></p>
+    <pre><code>H
+e
+l
+l
+o</code></pre>
+
+    <h2>Diferença entre <code>for...of</code> e <code>for...in</code></h2>
+    <ul>
+        <li><strong><code>for...in</code>:</strong> Itera sobre as <strong>propriedades</strong> (índices ou chaves) de um objeto ou array.</li>
+        <li><strong><code>for...of</code>:</strong> Itera sobre os <strong>valores</strong> diretamente.</li>
+    </ul>
+
+</body>
+</html>
