@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concatenação de Arrays em JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Concatenação de Arrays em JavaScript</h1>
+
+    <div class="section">
+        <h2>1. Usando o Método <code>concat()</code></h2>
+        <p>O método <code>concat()</code> junta dois ou mais arrays e retorna um novo array, sem modificar os arrays originais.</p>
+        <pre>
+const array1 = [1, 2, 3];
+const array2 = [4, 5, 6];
+
+const novoArray = array1.concat(array2);
+
+console.log(novoArray); // [1, 2, 3, 4, 5, 6]
+        </pre>
+        <button onclick="usarConcat()">Executar concat()</button>
+    </div>
+
+    <div class="section">
+        <h2>2. Usando o Operador Spread (<code>...</code>)</h2>
+        <p>O operador spread espalha os elementos de um array, permitindo concatenar arrays de forma concisa.</p>
+        <pre>
+const array1 = [1, 2, 3];
+const array2 = [4, 5, 6];
+
+const novoArray = [...array1, ...array2];
+
+console.log(novoArray); // [1, 2, 3, 4, 5, 6]
+        </pre>
+        <button onclick="usarSpread()">Executar Spread Operator</button>
+    </div>
+
+    <div class="section">
+        <h2>3. Usando o Método <code>push()</code> com o Operador Spread</h2>
+        <p>O método <code>push()</code> adiciona elementos ao final de um array. Quando usado com o operador spread, ele concatena arrays modificando o array original.</p>
+        <pre>
+const array1 = [1, 2, 3];
+const array2 = [4, 5, 6];
+
+array1.push(...array2);
+
+console.log(array1); // [1, 2, 3, 4, 5, 6]
+        </pre>
+        <button onclick="usarPush()">Executar push() com Spread</button>
+    </div>
+
+    <div class="section">
+        <h2>4. Usando um Loop <code>for</code></h2>
+        <p>Você pode concatenar arrays iterando sobre um array e adicionando seus elementos a outro array usando um loop <code>for</code>.</p>
+        <pre>
+const array1 = [1, 2, 3];
+const array2 = [4, 5, 6];
+
+for (let i = 0; i < array2.length; i++) {
+    array1.push(array2[i]);
+}
+
+console.log(array1); // [1, 2, 3, 4, 5, 6]
+        </pre>
+        <button onclick="usarFor()">Executar Loop for</button>
+    </div>
+
+    <div class="section">
+        <h2>5. Usando o Método <code>reduce()</code></h2>
+        <p>O método <code>reduce()</code> pode ser usado para concatenar arrays, especialmente se você tiver um array de arrays.</p>
+        <pre>
+const arrays = [[1, 2], [3, 4], [5, 6]];
+
+const concatenado = arrays.reduce((acc, curr) => acc.concat(curr), []);
+
+console.log(concatenado); // [1, 2, 3, 4, 5, 6]
+        </pre>
+        <button onclick="usarReduce()">Executar reduce()</button>
+    </div>
+
+    <div class="section">
+        <h2>6. Usando o Método <code>flat()</code></h2>
+        <p>O método <code>flat()</code> "achata" arrays aninhados em um único array, útil quando se tem arrays dentro de arrays.</p>
+        <pre>
+const arrays = [[1, 2], [3, 4], [5, 6]];
+
+const concatenado = arrays.flat();
+
+console.log(concatenado); // [1, 2, 3, 4, 5, 6]
+        </pre>
+        <button onclick="usarFlat()">Executar flat()</button>
+    </div>
+
+    <h2>Resultado:</h2>
+    <pre id="resultado"></pre>
+
+    <script>
+        const array1 = [1, 2, 3];
+        const array2 = [4, 5, 6];
+
+        function usarConcat() {
+            const resultado = array1.concat(array2);
+            document.getElementById('resultado').textContent = `concat(): [${resultado}]`;
+        }
+
+        function usarSpread() {
+            const resultado = [...array1, ...array2];
+            document.getElementById('resultado').textContent = `Spread Operator: [${resultado}]`;
+        }
+
+        function usarPush() {
+            const array3 = [...array1]; // Criar uma cópia para não modificar array1 original
+            array3.push(...array2);
+            document.getElementById('resultado').textContent = `push() com Spread: [${array3}]`;
+        }
+
+        function usarFor() {
+            const array3 = [...array1]; // Criar uma cópia para não modificar array1 original
+            for (let i = 0; i < array2.length; i++) {
+                array3.push(array2[i]);
+            }
+            document.getElementById('resultado').textContent = `Loop for: [${array3}]`;
+        }
+
+        function usarReduce() {
+            const arrays = [[1, 2], [3, 4], [5, 6]];
+            const resultado = arrays.reduce((acc, curr) => acc.concat(curr), []);
+            document.getElementById('resultado').textContent = `reduce(): [${resultado}]`;
+        }
+
+        function usarFlat() {
+            const arrays = [[1, 2], [3, 4], [5, 6]];
+            const resultado = arrays.flat();
+            document.getElementById('resultado').textContent = `flat(): [${resultado}]`;
+        }
+    </script>
+</body>
+</html>
