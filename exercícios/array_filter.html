@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemplos de filter() em JavaScript</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    pre {
+      background-color: #f4f4f4;
+      padding: 10px;
+      border-left: 5px solid #ccc;
+      overflow-x: auto;
+    }
+    code {
+      color: #d63384;
+    }
+    h1 {
+      color: #007acc;
+    }
+  </style>
+  <script>
+    //filtre os valores maiores que 10
+    const numeros = [1,2,56,6,9,12,2,45,56,78,9,36,25,4,78]
+
+    //com for
+    let nfor = []
+    for(let i = 0;i <= numeros.length;i++){
+        if(numeros[i]>10){
+            nfor.push(numeros[i])
+        }
+    }
+    console.log(nfor)
+
+    const numerosFiltrados = function (valor){
+        if(valor >10){
+            return true
+        }else {
+            return false
+        }
+    }
+
+    
+        for(const n of numeros) {
+           console.log( numerosFiltrados(n))
+        }
+        
+    
+
+    
+    //como utilizamos o filter
+    const n = numeros.filter((valor)=>valor > 10)
+    console.log(n)
+
+</script>
+</head>
+<body>
+
+  <h1>Método <code>filter()</code> em JavaScript</h1>
+
+  <p>O método <code>filter()</code> é usado para criar um novo array com todos os elementos que passam no teste implementado pela função fornecida. Ele não modifica o array original, mas retorna um novo array com os itens filtrados.</p>
+
+  <h2>Sintaxe</h2>
+  <pre><code>array.filter(callback(elemento, indice, array), thisArg)</code></pre>
+
+  <p>Exemplo básico:</p>
+  <pre><code>
+const numeros = [1, 2, 3, 4, 5];
+
+// Função de callback que testa se o número é maior que 2
+const maioresQueDois = numeros.filter(num => num > 2);
+
+console.log(maioresQueDois); // [3, 4, 5]
+  </code></pre>
+
+  <h2>Exemplo utilizando o índice</h2>
+  <p>Vamos criar um exemplo onde o índice é necessário para realizar a filtragem.</p>
+
+  <pre><code>
+const numeros = [10, 15, 20, 25, 30, 35, 40, 45];
+
+// Função de callback que testa se o índice do número é ímpar
+const numerosEmIndicesImpares = numeros.filter((num, indice) => indice % 2 !== 0);
+
+console.log(numerosEmIndicesImpares); // [15, 25, 35, 45]
+  </code></pre>
+
+  <h2>Exemplo utilizando o array completo</h2>
+  <p>Agora, um exemplo onde utilizamos o array completo para verificar se um número é único.</p>
+
+  <pre><code>
+const numeros = [1, 2, 3, 2, 4, 5, 3, 6, 7];
+
+// Função de callback que testa se o número aparece apenas uma vez no array
+const unicos = numeros.filter((num, indice, array) => array.indexOf(num) === array.lastIndexOf(num));
+
+console.log(unicos); // [1, 4, 5, 6, 7]
+  </code></pre>
+
+  <h2>Exemplo utilizando <code>thisArg</code></h2>
+  <p>Agora, um exemplo que utiliza o <code>thisArg</code> para definir o valor de <code>this</code> dentro da função de callback.</p>
+
+  <pre><code>
+const produtos = [
+  { nome: 'Camiseta', preco: 25 },
+  { nome: 'Calça', preco: 60 },
+  { nome: 'Tênis', preco: 120 },
+  { nome: 'Boné', preco: 15 }
+];
+
+// Objeto externo que contém o valor máximo permitido para filtrar produtos
+const filtro = {
+  precoMaximo: 50
+};
+
+// Função de callback que filtra os produtos com base no preço máximo
+const produtosFiltrados = produtos.filter(function(produto) {
+  return produto.preco < this.precoMaximo;
+}, filtro); // Passamos 'filtro' como o thisArg
+
+console.log(produtosFiltrados);
+// [
+//   { nome: 'Camiseta', preco: 25 },
+//   { nome: 'Boné', preco: 15 }
+// ]
+  </code></pre>
+
+  <p>Tem um exemplo que só pode ser visto no console.log</p>
+
+</body>
+</html>
