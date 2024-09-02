@@ -1,45 +1,141 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Meu curso JavaScript</title>
-        <script>
-          //string
-          var texto ="Curso JavaScript"
+<html lang="pt-BR">
 
-          //numerico
-          var valorInteiro = -9
-          var valorFracinario = 121.56
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variáveis em JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
 
-          //boleano
-          var teste = false
+        h1, h2, h3 {
+            color: #333;
+        }
 
-          //alert(valorInteiro)
-          document.writeln(texto+"<br>")
-          document.writeln(texto)
-          document.write(texto)
+        code {
+            background-color: #e7e7e7;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
 
-          console.log(valorFracinario)
+        pre {
+            background-color: #e7e7e7;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
 
-          //null
-          var variavelNula = null // intencionalmente não tem nenhum valor
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
 
-          //undefined
-          var variavelSemvalor = undefined // variavel indefinida
-          var variavelSemValor2
+<body>
+    <div class="container">
+        <h1>Variáveis em JavaScript</h1>
+        <p>Variáveis em JavaScript são identificadores usados para armazenar dados que podem ser manipulados e referenciados ao longo do código. Elas são fundamentais para a programação, pois permitem o armazenamento de valores temporários, a execução de operações matemáticas, a manipulação de strings e a tomada de decisões com base em condições.</p>
 
-          console.log(variavelNula)
-          console.log(variavelSemvalor)
-          console.log(variavelSemValor2)
+        <h2>Declaração de Variáveis em JavaScript</h2>
+        <p>JavaScript permite a declaração de variáveis utilizando três palavras-chave principais:</p>
+        <ol>
+            <li><strong>var</strong>: É a forma mais antiga de declarar variáveis. Uma variável declarada com <code>var</code> tem escopo de função ou global, dependendo de onde é declarada. Não respeita o escopo de bloco.</li>
+            <pre><code>var nome = "João";</code></pre>
+            <li><strong>let</strong>: Introduzida no ES6 (ECMAScript 2015), <code>let</code> permite a declaração de variáveis que respeitam o escopo de bloco. É preferida em relação ao <code>var</code> para evitar problemas de escopo.</li>
+            <pre><code>let idade = 30;</code></pre>
+            <li><strong>const</strong>: Também introduzida no ES6, <code>const</code> declara variáveis que não podem ser reatribuídas após sua inicialização. Assim como <code>let</code>, <code>const</code> respeita o escopo de bloco.</li>
+            <pre><code>const PI = 3.14;</code></pre>
+        </ol>
 
-          variavelSemValor2 = 10
-          console.log(variavelSemValor2)
-       
+        <h2>Tipos de Variáveis em JavaScript</h2>
+        <p>JavaScript é uma linguagem de tipagem dinâmica, o que significa que uma variável pode ser inicializada com um tipo de dado e, posteriormente, conter um tipo diferente. Os tipos de dados em JavaScript podem ser divididos em duas categorias principais: <strong>tipos primitivos</strong> e <strong>tipos de referência</strong>.</p>
 
-        </script>
-    
-    </head>
-    <body>
-        <h1>Variavéis</h1>
-    </body>
+        <h3>Tipos Primitivos</h3>
+        <ul>
+            <li><strong>string</strong>: Cadeia de caracteres.
+                <pre><code>let nome = "Maria";</code></pre>
+            </li>
+            <li><strong>number</strong>: Números, tanto inteiros quanto decimais.
+                <pre><code>let idade = 25;
+let temperatura = -5.3;</code></pre>
+            </li>
+            <li><strong>boolean</strong>: Representa um valor lógico: <code>true</code> ou <code>false</code>.
+                <pre><code>let isAluno = true;</code></pre>
+            </li>
+            <li><strong>undefined</strong>: Uma variável que foi declarada, mas não inicializada, possui o valor <code>undefined</code>.
+                <pre><code>let valor;
+console.log(valor); // undefined</code></pre>
+            </li>
+            <li><strong>null</strong>: Representa intencionalmente um valor vazio ou inexistente.
+                <pre><code>let obj = null;</code></pre>
+            </li>
+            <li><strong>symbol</strong>: Introduzido no ES6, <code>Symbol</code> é um valor único e imutável que pode ser usado como identificador para propriedades de objetos.
+                <pre><code>let id = Symbol('id');</code></pre>
+            </li>
+            <li><strong>bigint</strong>: Representa números inteiros de precisão arbitrária. Útil para cálculos com números maiores do que o tipo <code>number</code> pode suportar.
+                <pre><code>let bigNumber = BigInt(9007199254740991);</code></pre>
+            </li>
+        </ul>
+
+        <h3>Tipos de Referência</h3>
+        <ul>
+            <li><strong>object</strong>: Uma coleção de propriedades, onde cada propriedade é um par chave/valor. Pode ser um objeto literal, array, função, etc.
+                <pre><code>let pessoa = {
+    nome: "João",
+    idade: 30
+};</code></pre>
+            </li>
+            <li><strong>array</strong>: Um tipo de objeto que armazena uma coleção de elementos indexados.
+                <pre><code>let frutas = ["maçã", "banana", "laranja"];</code></pre>
+            </li>
+            <li><strong>function</strong>: Em JavaScript, funções são objetos de primeira classe, o que significa que podem ser armazenadas em variáveis, passadas como argumentos para outras funções, etc.
+                <pre><code>function saudacao() {
+    console.log("Olá!");
+}</code></pre>
+            </li>
+        </ul>
+
+        <h2>Como Usar Variáveis em JavaScript</h2>
+        <ol>
+            <li><strong>Declaração e Inicialização</strong>: Você declara uma variável usando <code>var</code>, <code>let</code> ou <code>const</code>, e pode inicializá-la com um valor.
+                <pre><code>let cidade = "São Paulo";
+const ano = 2024;
+var idade = 28;</code></pre>
+            </li>
+            <li><strong>Reatribuição</strong>: Variáveis declaradas com <code>var</code> ou <code>let</code> podem ser reatribuídas. Variáveis declaradas com <code>const</code> não podem ser reatribuídas.
+                <pre><code>let contador = 1;
+contador = 2; // válido
+
+const PI = 3.14;
+// PI = 3.1415; // inválido, causa um erro</code></pre>
+            </li>
+            <li><strong>Escopo de Variáveis</strong>: Variáveis declaradas com <code>var</code> têm escopo global ou de função. Variáveis declaradas com <code>let</code> e <code>const</code> têm escopo de bloco.
+                <pre><code>if (true) {
+    var x = 5; // escopo global
+    let y = 10; // escopo de bloco
+    const z = 15; // escopo de bloco
+}
+console.log(x); // 5
+// console.log(y); // ReferenceError: y is not defined
+// console.log(z); // ReferenceError: z is not defined</code></pre>
+            </li>
+        </ol>
+
+        <h2>Boas Práticas</h2>
+        <ul>
+            <li><strong>Use <code>let</code> e <code>const</code></strong> em vez de <code>var</code> para evitar problemas de escopo.</li>
+            <li><strong>Prefira <code>const</code></strong> a <code>let</code> quando não precisar reatribuir o valor, para deixar claro que a variável não deve mudar.</li>
+            <li><strong>Escolha nomes de variáveis descritivos</strong> para melhorar a legibilidade do código.</li>
+        </ul>
+    </div>
+</body>
+
 </html>
