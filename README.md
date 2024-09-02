@@ -4,7 +4,7 @@
 
 ## Súmario
 
-Variáveis <https://github.com/FranciscoBraga/javascript_exercicios/blob/main/exerc%C3%ADcios/variaveis.html>
+[Variáveis](https://github.com/FranciscoBraga/javascript_exercicios/blob/main/exerc%C3%ADcios/variaveis.html)
 
 
 ### comentário
